@@ -1,0 +1,26 @@
+const path = require("path")
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const pages = await graphql(`
+    {
+      allPrismicPodcast {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
+    }
+  `)
+  const template = path.resolve("src/templates/podcast.jsx")
+  pages.data.allPrismicPodcast.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.uid}`,
+      component: template,
+      context: {
+        uid: edge.node.uid,
+      },
+    })
+  })
+}
