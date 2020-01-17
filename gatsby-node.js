@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  const template = path.resolve("src/templates/podcast.jsx")
+  const template = path.resolve("src/templates/Podcast/index.jsx")
   pages.data.allPrismicPodcast.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.uid}`,
