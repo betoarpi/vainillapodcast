@@ -11,13 +11,49 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allPrismicPages {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
+      allPrismicTeam {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
     }
   `)
-  const template = path.resolve("src/templates/Podcast/index.jsx")
+  const podcastTemplate = path.resolve("src/templates/Podcast/index.jsx")
   pages.data.allPrismicPodcast.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.uid}`,
-      component: template,
+      component: podcastTemplate,
+      context: {
+        uid: edge.node.uid,
+      },
+    })
+  })
+  const pageTemplate = path.resolve("src/templates/Pages/index.jsx")
+  pages.data.allPrismicPages.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.uid}`,
+      component: pageTemplate,
+      context: {
+        uid: edge.node.uid,
+      },
+    })
+  })
+  const teamTemplate = path.resolve("src/templates/Team/index.jsx")
+  pages.data.allPrismicTeam.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.uid}`,
+      component: teamTemplate,
       context: {
         uid: edge.node.uid,
       },

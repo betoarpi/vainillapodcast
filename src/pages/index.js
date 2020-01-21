@@ -4,10 +4,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const Homepage = ({ data }) => {
-  console.log()
   return (
     <Layout>
-      <h1>All the capitulos</h1>
       <ul>
         {data.posts.nodes.map(node => (
           <li>
@@ -17,7 +15,7 @@ const Homepage = ({ data }) => {
           </li>
         ))}
       </ul>
-    </Layout>
+    </Layout >
   )
 }
 
