@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     color: var(--color-secondary);
   }
-  header {
+  .header {
     display: flex;
     padding:1rem 0;
     margin-bottom: 2rem;

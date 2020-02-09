@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Img from 'gatsby-image'
-import PodcastSection from './styles'
+import { PodcastSection, PodcastHeader, ShowNotes } from './styles'
 import { FiChevronDown } from 'react-icons/fi'
 
 const Podcast = ({ data: { prismicPodcast } }) => {
@@ -24,32 +24,43 @@ const Podcast = ({ data: { prismicPodcast } }) => {
       pageTitle={data.title.text}
     >
       <PodcastSection>
-        <h1>{data.title.text}</h1>
-        <Img
-          alt={data.cover.alt}
-          fluid={data.cover.localFile.childImageSharp.fluid}
-          objectFit="cover"
-          objectPosition="50% 50%"
-        />
-        <p>
-          {tags.map(tag => <span>{tag}</span>)}
-          {' '}Episodio <span dangerouslySetInnerHTML={{ __html: data.episode_number.text }} /></p>
-        <p><span dangerouslySetInnerHTML={{ __html: data.publication_date }} /></p>
-        <div dangerouslySetInnerHTML={{ __html: data.podcast_embed.text }} />
-        <p><span dangerouslySetInnerHTML={{ __html: data.show_description.text }} /></p>
-        <ul className='show-notes'>
-          {data.show_notes.map((note) => (
-            <li key={note.note_title.text} className='show-notes__note'>
-              <h5 className='show-notes__note__title'>
-                <span>{note.time_of_note.text}: </span>
-                {note.note_title.text}
-                {note.section_name && <span> - {note.section_name}</span>}
-                <button type='button' onClick={handleClick}><FiChevronDown /></button>
-              </h5>
-              <div dangerouslySetInnerHTML={{ __html: note.note_content.html }} />
-            </li>
-          ))}
-        </ul>
+        <article>
+          <PodcastHeader>
+            <figure className='cover'>
+              <Img
+                alt={data.cover.alt}
+                fluid={data.cover.localFile.childImageSharp.fluid}
+                objectFit="cover"
+                objectPosition="50% 50%"
+              />
+            </figure>
+            <div>
+              <h1>{data.title.text}</h1>
+              <small>{tags}: Episodio {data.episode_number.text}</small>
+              <p><span dangerouslySetInnerHTML={{ __html: data.publication_date }} /></p>
+              <p><span dangerouslySetInnerHTML={{ __html: data.show_description.text }} /></p>
+            </div>
+          </PodcastHeader>
+          <div>
+            <div dangerouslySetInnerHTML={{ __html: data.podcast_embed.text }} />
+            <h2>Las notas del show</h2>
+            <ShowNotes>
+              {data.show_notes.map((note) => (
+                <li key={note.note_title.text} className='show-note'>
+                  <h5 className='show-note__title'>
+                    <span className='show-note__topic'>{note.note_title.text}</span>
+                    <span className='show-note__time'>{note.time_of_note.text}: </span>
+                    {note.section_name && <span className='show-note__hashtag'> # {note.section_name}</span>}
+                    {note.note_content.html &&
+                      <button type='button' onClick={handleClick}><FiChevronDown /></button>
+                    }
+                  </h5>
+                  <div dangerouslySetInnerHTML={{ __html: note.note_content.html }} />
+                </li>
+              ))}
+            </ShowNotes>
+          </div>
+        </article>
       </PodcastSection>
     </Layout>
   )

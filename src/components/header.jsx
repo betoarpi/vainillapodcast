@@ -11,7 +11,7 @@ const Header = ({ pageDescription, pageTitle }) => {
         title={pageTitle}
         description={pageDescription}
       />
-      <header>
+      <header className='header'>
         <nav>
           <Link to='/'>
             <img src={Logo} alt='NRDWARE Logo' />
