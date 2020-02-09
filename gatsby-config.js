@@ -31,7 +31,7 @@ module.exports = {
         name: `GatsbyJS`,
         short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#E5BE21`,
+        background_color: `#BFC9B1`,
         theme_color: `#F62AB0`,
         display: `minimal-ui`,
         //icon: `src/images/favicon.png`, // This path is relative to the root of the site.
@@ -46,6 +46,12 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    }
   ],
 }

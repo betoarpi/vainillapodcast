@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import Header from './header'
+import Footer from './footer'
 
 const Layout = ({ children, pageTitle, pageDescription }) => {
   const data = useStaticQuery(graphql`
@@ -27,9 +28,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
       <main>
         {children}
       </main>
-      <div>
-        footer
-      </div>
+      <Footer />
     </>
   )
 }

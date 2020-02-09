@@ -13,7 +13,9 @@ const Header = ({ pageDescription, pageTitle }) => {
       />
       <header>
         <nav>
-          <img src={Logo} alt='NRDWARE Logo' />
+          <Link to='/'>
+            <img src={Logo} alt='NRDWARE Logo' />
+          </Link>
           <ul>
             <li>
               <Link to='/'>Episodios</Link>
