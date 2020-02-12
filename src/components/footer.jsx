@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   max-width:960px;
   text-align: center;
 `

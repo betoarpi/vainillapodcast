@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Img from 'gatsby-image'
 import { PodcastSection, PodcastHeader, ShowNotes } from './styles'
-import { FiChevronDown } from 'react-icons/fi'
+import { TiPlus } from 'react-icons/ti'
 
 const Podcast = ({ data: { prismicPodcast } }) => {
   const { data, tags } = prismicPodcast
@@ -49,10 +49,10 @@ const Podcast = ({ data: { prismicPodcast } }) => {
                 <li key={note.note_title.text} className='show-note'>
                   <h5 className='show-note__title'>
                     <span className='show-note__topic'>{note.note_title.text}</span>
-                    <span className='show-note__time'>{note.time_of_note.text}: </span>
-                    {note.section_name && <span className='show-note__hashtag'> # {note.section_name}</span>}
+                    <span className='show-note__time'>{note.time_of_note.text} </span>
+                    {note.section_name && <span className='show-note__hashtag'> #{note.section_name}</span>}
                     {note.note_content.html &&
-                      <button type='button' onClick={handleClick}><FiChevronDown /></button>
+                      <button type='button' onClick={handleClick}><TiPlus /></button>
                     }
                   </h5>
                   <div dangerouslySetInnerHTML={{ __html: note.note_content.html }} />

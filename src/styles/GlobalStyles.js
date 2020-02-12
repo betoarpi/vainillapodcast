@@ -20,6 +20,13 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     color: var(--color-secondary);
   }
+  a {
+    color: var(--color-secondary);
+
+    &:hover {
+      background: var(--color-highlight);
+    }
+  }
   .header {
     display: flex;
     padding:1rem 0;
@@ -54,7 +61,7 @@ const GlobalStyles = createGlobalStyle`
             position: relative;
             text-decoration: none;
             text-transform: uppercase;
-            &:hover {
+            &:hover, &[aria-current='page'] {
               color: var(--color-secondary);
               &:before {
                 background: var(--color-highlight);
@@ -82,6 +89,7 @@ const GlobalStyles = createGlobalStyle`
   }
   main {
     margin: 0 auto;
+    min-height: calc(100vh - 224px);
   }
   .btn {
     align-items: center;

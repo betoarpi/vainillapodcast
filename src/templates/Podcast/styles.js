@@ -41,6 +41,13 @@ export const PodcastHeader = styled.header`
       margin-bottom: 1rem;
     }
   }
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: 300px 1fr;
+  }
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const ShowNotes = styled.ul`
@@ -52,19 +59,32 @@ export const ShowNotes = styled.ul`
   }
 
   .show-note {
+    /* background: rgba(255,255,255,0.5); */
+    box-shadow:  -0.05rem 0.05rem 0.35rem #c9ccc6;
+    margin-bottom: 0.5rem;
+    padding: 1rem 0.5rem;
+    &:first-child {
+      border-radius: 1rem 1rem 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 1rem 1rem;
+    }
     &__title {
-      border-bottom: 1px solid rgba(0,0,0, 0.25);
       display: grid;
       font-weight:400;
-      gap:0.5rem;
-      grid-template-columns: max-content max-content 1fr 30px;
-      padding-bottom:0.5rem;
+      gap:1rem;
+      grid-template-columns: 65px auto 1fr 30px;
+      margin-bottom: 0;
       position: relative;
       button {
         appearance: none;
+        background: none;
         border:none;
+        display: grid;
+        font-size:1rem;
         grid-column: 4 / 5;
         grid-row: 1 / 2;
+        justify-content: center;
         outline: none;
         &:before {
           content: ' ';
@@ -78,10 +98,44 @@ export const ShowNotes = styled.ul`
           cursor: pointer;
         }
       }
+      @media screen and (max-width: 479px) {
+        grid-template-columns: max-content 1fr 30px;
+        grid-template-rows: max-content max-content;
+        > * {
+          grid-column: initial !important;
+          grid-row: 1 / 2 !important;
+          &.show-note__topic {
+            grid-row: 2 / 3 !important;
+            grid-column: 1 / 4 !important;
+          }
+          &.show-note__time {
+            text-align: left;
+          }
+        }
+      }
+    }
+    &__title + div {
+      border-top: 2px solid rgba(0,0,0,0.085);
+      direction: rtl;
+      margin: 0.5rem 0 0;
+      padding: 1.5rem 2rem 0;
+      ul + p {
+        margin-bottom: 0.5rem;
+      }
+      ul {
+        direction: initial;
+        margin-bottom: 1rem;
+        li {
+          list-style: disc;
+          margin-bottom: 0;
+        }
+      }
     }
     &__time {
+      font-weight: 700;
       grid-column: 1 / 2;
       grid-row: 1 / 2;
+      text-align: right;
     }
     &__topic {
       grid-column: 2 / 3;
