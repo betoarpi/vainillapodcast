@@ -8,7 +8,6 @@ import { AiOutlinePlayCircle } from 'react-icons/ai'
 const StyledSection = styled.section`
   margin: 0 auto;
   max-width: 960px;
-
   > h1 {
     display: block;
     margin: 0 auto 2rem;
@@ -54,6 +53,12 @@ const StyledSection = styled.section`
 
     > div {
       padding:1rem 0;
+      > a {
+        text-decoration: none;
+      }
+      > a > h2 {
+        color: var(--color-default);
+      }
       > h2 {
         margin-bottom:0.5rem;
       }
@@ -89,7 +94,9 @@ const Latest = ({ LatestPost }) => {
             </figure>
           </Link>
           <div>
-            <h2>{node.data.title.text}</h2>
+            <Link to={`/${node.slugs[0]}`}>
+              <h2>{node.data.title.text}</h2>
+            </Link>
             <small>{node.tags}: Episodio {node.data.episode_number.text}</small>
             <div dangerouslySetInnerHTML={{ __html: node.data.show_description.html }} />
             <Link to={`/${node.slugs[0]}`} className='btn'>

@@ -12,7 +12,7 @@ const Page = ({ data: { prismicPages } }) => {
     >
       <section>
         <h1>{data.page_name.text}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.content.text }} />
+        <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
       </section>
     </Layout>
   )
@@ -35,6 +35,7 @@ export const pageQuery = graphql`
         }
         content {
           text
+          html
         }
       }
     }

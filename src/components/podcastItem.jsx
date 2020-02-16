@@ -11,6 +11,21 @@ const StyledArticle = styled.article`
   box-shadow:  -20px 20px 60px #c9ccc6, 
                20px -20px 60px #ffffff;
   margin-left:4rem;
+  position: relative;
+
+  > span {
+    background: var(--color-default);
+    border-radius: 0.5rem;
+    color: white;
+    font-size:0.45rem;
+    font-weight: 700;
+    left:-4.5rem;
+    padding: 0.15rem 0.5rem;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   > a {
     align-items: center;
@@ -83,6 +98,7 @@ const PodcastItem = ({ data, tags, slugs }) => {
         </div>
         <AiFillPlayCircle className='icon' />
       </Link>
+      <span>{data.publication_date}</span>
     </StyledArticle>
   )
 }

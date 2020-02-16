@@ -20,11 +20,13 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     color: var(--color-secondary);
   }
-  a {
-    color: var(--color-secondary);
+  padding, ul, li, span {
+    a {
+      color: var(--color-secondary);
 
-    &:hover {
-      background: var(--color-highlight);
+      &:hover {
+        background: var(--color-highlight);
+      }
     }
   }
   .header {
@@ -90,6 +92,7 @@ const GlobalStyles = createGlobalStyle`
   main {
     margin: 0 auto;
     min-height: calc(100vh - 224px);
+    max-width: 960px;
   }
   .btn {
     align-items: center;
@@ -120,6 +123,11 @@ const GlobalStyles = createGlobalStyle`
       svg {
         display: none;
       }
+    }
+  }
+  p {
+    img {
+      border-radius:1rem;
     }
   }
 `

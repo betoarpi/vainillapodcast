@@ -89,6 +89,7 @@ export const homePageQuery = graphql`
       nodes {
         uid
         data {
+          publication_date(formatString: "DD MMM YY", locale: "ES")
           title {
             text
           }
