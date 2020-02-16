@@ -125,7 +125,7 @@ const GlobalStyles = createGlobalStyle`
       }
     }
   }
-  p {
+  figure {
     img {
       border-radius:1rem;
     }

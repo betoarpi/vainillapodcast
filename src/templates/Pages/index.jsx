@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../../components/layout'
 
 const Page = ({ data: { prismicPages } }) => {
@@ -12,6 +13,11 @@ const Page = ({ data: { prismicPages } }) => {
     >
       <section>
         <h1>{data.page_name.text}</h1>
+        {data.page_cover.localFile &&
+          <figure>
+            <Img fluid={data.page_cover.localFile.childImageSharp.fluid} alt={data.page_name.text} />
+          </figure>
+        }
         <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
       </section>
     </Layout>
@@ -32,6 +38,15 @@ export const pageQuery = graphql`
       data {
         page_name {
           text
+        }
+        page_cover {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 960) {
+                ...GatsbyImageSharpFluid_tracedSVG,
+              }
+            }
+          }
         }
         content {
           text

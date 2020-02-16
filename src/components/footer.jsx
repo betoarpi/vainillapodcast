@@ -12,7 +12,7 @@ const Year = new Date().getFullYear()
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>&copy; Copyright {Year}. Made with <span role='img' aria-label='love'>❤️</span> by NRDWARE fans.</p>
+      <p>&copy; NRDWARE {Year}. Made with <span role='img' aria-label='love'>❤️</span> by NRDWARE fans.</p>
     </StyledFooter>
   );
 };
