@@ -12,11 +12,14 @@ const PodcastSection = styled.section`
     text-align: center;
     display: block;
     margin: 0 auto 2rem;
+    position: relative;
+    z-index:1;
   }
 `
 
 const PodcastGrid = styled.div`
   position: relative;
+  z-index:0;
   &:before {
     background: var(--color-default);
     border-radius:3px;

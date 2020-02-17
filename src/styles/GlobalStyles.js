@@ -194,6 +194,16 @@ const GlobalStyles = createGlobalStyle`
       border-radius:1rem;
     }
   }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #F339B0;
+  }
+
+  ::selection {
+    color: white;
+    background: #F339B0;
+  }
 `
 
 export default GlobalStyles

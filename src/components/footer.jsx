@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
+  color: #9B9F94;
+  font-size:0.85rem;
   margin: 2rem auto 0 auto;
   max-width:960px;
   text-align: center;

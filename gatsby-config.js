@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `El Podcast para el nerdo que llevamos dentro`,
+    title: `El Podcast para el nerdo que todos llevamos dentro`,
     description: `En esta producción original de Spotify comentamos los eventos y lanzamientos más sobresalientes de la cultura geek en compañía de Mariano Latapí, Claudio Quiroz, Miguel Asher Sandoval y Lorenzo Grajales, cuatro de los nerdos mejor conocidos en la República Mexicana. Videojuegos, películas, series, cómics, juguetes y música friki, todo ello y más tiene su lugar en NRDWARE, el podcast para el nerdo que llevamos dentro.`,
     author: `Diseño por @violetstarfish y desarrollo por @betoarpi`,
   },
@@ -14,7 +14,10 @@ module.exports = {
       options: {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: ({ node, key, value }) => doc => {
+          // Your link resolver
+          if (doc.type === 'pages') return "/page/" + doc.uid;
+        },
       },
     },
     {
