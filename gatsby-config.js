@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `NRDWARE`,
+    title: `El Podcast para el nerdo que llevamos dentro`,
     description: `En esta producción original de Spotify comentamos los eventos y lanzamientos más sobresalientes de la cultura geek en compañía de Mariano Latapí, Claudio Quiroz, Miguel Asher Sandoval y Lorenzo Grajales, cuatro de los nerdos mejor conocidos en la República Mexicana. Videojuegos, películas, series, cómics, juguetes y música friki, todo ello y más tiene su lugar en NRDWARE, el podcast para el nerdo que llevamos dentro.`,
     author: `Diseño por @violetstarfish y desarrollo por @betoarpi`,
   },
@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#BFC9B1`,
         theme_color: `#F62AB0`,
         display: `minimal-ui`,
-        //icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {

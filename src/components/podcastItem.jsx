@@ -7,7 +7,7 @@ import { AiFillPlayCircle } from 'react-icons/ai'
 
 const StyledArticle = styled.article`
   border-radius: 1.5rem;
-  background: #edf0e9;
+  background: var(--color-primary-lighter);
   box-shadow:  -20px 20px 60px #c9ccc6, 
                20px -20px 60px #ffffff;
   margin-left:4rem;

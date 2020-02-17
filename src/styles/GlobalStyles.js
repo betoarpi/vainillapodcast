@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 18px;
     --color-primary: #edf0e9;
+    --color-primary-lighter: #f5f8f1;
     --color-primary_shade: #BFC9B1;
     --color-secondary: #691936;
     --color-highlight: #f7ca2a;
@@ -16,6 +17,12 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     margin:0;
     padding:0 2rem;
+    &.header-sticky {
+      padding-top:103px;
+      @media screen and(max-width: 767px){
+        padding-top:116px;
+      }
+    }
   }
   h1 {
     color: var(--color-secondary);
@@ -78,13 +85,70 @@ const GlobalStyles = createGlobalStyle`
             }
           }
         }
+        &.active {
+          left: 0;
+          opacity:1;
+        }
       }
     }
 
+    &.sticky {
+      background: var(--color-primary);
+      box-shadow:  0 0 60px rgba(0,0,0,0.25);
+      left:0;
+      padding:1rem 2rem;
+      position: fixed;
+      top:0;
+      z-index:9;
+    }
+
     @media screen and (max-width: 767px) {
+      &.sticky {
+        padding-bottom:0;
+      }
       nav {
+        display: block;
+        a {
+          display: block;
+          float: left;
+          width:100px;
+        }
         ul {
-          display: none;
+          background: var(--color-secondary);
+          box-shadow:  0 0 30px rgba(0,0,0,1);
+          display:block;
+          height:100%;
+          left:-100%;
+          opacity:0;
+          padding: 2rem;
+          position: fixed;
+          top:0;
+          transition: all 0.25s ease-in-out;
+          width:calc(100% - 132px);
+          z-index: 10;
+          li {
+            float: left;
+            margin-bottom: 1rem;
+            width:100%;
+            a {
+              color: white;
+              display: block;
+              font-size: 1.3rem;
+              font-weight:700;
+              width:100%;
+              &:hover, &[aria-current='page'] {
+                color: white;
+                padding-left:0.5rem;
+                &:before {
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+        > svg {
+          display: block;
+          float: right;
         }
       }
     }

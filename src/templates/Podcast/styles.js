@@ -8,7 +8,7 @@ export const PodcastSection = styled.section`
 export const PodcastHeader = styled.header`
   align-items: center;
   border-radius: 1.5rem;
-  background: #edf0e9;
+  background: var(--color-primary-lighter);
   box-shadow:  -20px 20px 60px #c9ccc6, 
               20px -20px 60px #ffffff;
   display: grid;
@@ -59,8 +59,8 @@ export const ShowNotes = styled.ul`
   }
 
   .show-note {
-    /* background: rgba(255,255,255,0.5); */
-    box-shadow:  -0.05rem 0.05rem 0.35rem #c9ccc6;
+    background: var(--color-primary-lighter);
+    box-shadow:  -0.05rem 0.05rem 0.35rem #BFC9B1;
     margin-bottom: 0.5rem;
     padding: 1rem 0.5rem;
     &:first-child {
@@ -115,10 +115,13 @@ export const ShowNotes = styled.ul`
       }
     }
     &__title + div {
-      border-top: 2px solid rgba(0,0,0,0.085);
+      border-top: 2px solid transparent;
       direction: rtl;
-      margin: 0.5rem 0 0;
-      padding: 1.5rem 2rem 0;
+      height:0;
+      opacity:0;
+      overflow:hidden;
+      padding: 0 2rem;
+      transition: all 0.25s ease-in-out;
       ul + p {
         margin-bottom: 0.5rem;
       }
@@ -147,12 +150,13 @@ export const ShowNotes = styled.ul`
       grid-column: 3 / 4;
       grid-row: 1 / 2;
     }
-    div {
-      display: none;
-    }
     &.active {
       div {
-        display: block;
+        border-top: 2px solid rgba(0,0,0,0.085);
+        height: initial;
+        margin: 0.5rem 0 0;
+        opacity:1;
+        padding: 1.5rem 2rem 0;
       }
     }
   }
