@@ -88,18 +88,18 @@ const Latest = ({ LatestPost }) => {
       <h1>Escucha el último episodio de NRDWARE</h1>
       {LatestPost.nodes.map(node => (
         <article key={node.uid}>
-          <Link to={`/${node.slugs[0]}`} className='cover'>
+          <Link to={`/${node.uid}`} className='cover'>
             <figure>
               <Img fluid={node.data.cover.localFile.childImageSharp.fluid} alt={node.data.cover.alt} />
             </figure>
           </Link>
           <div>
-            <Link to={`/${node.slugs[0]}`}>
+            <Link to={`/${node.uid}`}>
               <h2>{node.data.title.text}</h2>
             </Link>
             <small>{node.tags}: Episodio {node.data.episode_number.text}</small>
             <div dangerouslySetInnerHTML={{ __html: node.data.show_description.html }} />
-            <Link to={`/${node.slugs[0]}`} className='btn'>
+            <Link to={`/${node.uid}`} className='btn'>
               <span>Escúchalo ahora</span> <AiOutlinePlayCircle />
             </Link>
           </div>

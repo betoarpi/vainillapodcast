@@ -85,10 +85,10 @@ const StyledArticle = styled.article`
   }
 `
 
-const PodcastItem = ({ data, tags, slugs }) => {
+const PodcastItem = ({ data, tags, uid }) => {
   return (
     <StyledArticle>
-      <Link to={`/${slugs[0]}`}>
+      <Link to={`/${uid}`}>
         <figure className='cover'>
           <Img fluid={data.cover.localFile.childImageSharp.fluid} alt={data.cover.alt} />
         </figure>
