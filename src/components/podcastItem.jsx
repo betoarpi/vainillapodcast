@@ -10,7 +10,7 @@ const StyledArticle = styled.article`
   background: var(--color-primary-lighter);
   box-shadow:  -20px 20px 60px #c9ccc6, 
                20px -20px 60px #ffffff;
-  margin-left:4rem;
+  margin: 2rem 0 2rem 4rem;
   position: relative;
 
   > span {
