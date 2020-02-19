@@ -196,13 +196,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::-moz-selection { /* Code for Firefox */
-    color: white;
-    background: #F339B0;
+    background: var(--color-highlight);
   }
 
   ::selection {
-    color: white;
-    background: #F339B0;
+    background: var(--color-highlight);
   }
 `
 
