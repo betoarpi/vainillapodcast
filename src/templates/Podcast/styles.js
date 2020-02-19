@@ -122,6 +122,9 @@ export const ShowNotes = styled.ul`
       overflow:hidden;
       padding: 0 2rem;
       transition: all 0.25s ease-in-out;
+      > * {
+        direction: ltr;
+      }
       ul + p {
         margin-bottom: 0.5rem;
       }
@@ -131,6 +134,11 @@ export const ShowNotes = styled.ul`
         li {
           list-style: disc;
           margin-bottom: 0;
+        }
+      }
+      ol {
+        li {
+          list-style: decimal-leading-zero;
         }
       }
     }
