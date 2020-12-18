@@ -24,7 +24,7 @@ const SEO = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={site.siteMetadata.title}
-      titleTemplate={`NRDWARE | ${title || site.siteMetadata.title}`}
+      titleTemplate={`Vainilla Podcast | ${title || site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,

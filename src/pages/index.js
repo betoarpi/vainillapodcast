@@ -34,19 +34,19 @@ const PodcastGrid = styled.div`
   }
 `
 
+
 const Homepage = ({ data }) => {
   const { AllPosts } = data
   return (
     <Layout>
       <Latest {...data} />
       <PodcastSection>
-        <h2>Todos los episodios</h2>
+        {AllPosts.nodes.length > 0 && <h2>Todos los episodios</h2>}
         <PodcastGrid>
           {AllPosts.nodes.map(node => (
             <PodcastItem
               className='podcast-grid__item'
               key={node.uid}
-              tags={node.tags}
               slug={node.slugs}
               {...node}
             />
@@ -84,11 +84,10 @@ export const homePageQuery = graphql`
           }
         }
         last_publication_date
-        tags
         slugs
       }
     }
-    AllPosts: allPrismicPodcast(skip: 1, sort: {fields: data___publication_date, order: DESC}) {
+    AllPosts: allPrismicPodcast(skip:1, sort: {fields: data___publication_date, order: DESC}) {
       nodes {
         uid
         data {
@@ -111,7 +110,6 @@ export const homePageQuery = graphql`
           }
         }
         last_publication_date
-        tags
         slugs
       }
     }

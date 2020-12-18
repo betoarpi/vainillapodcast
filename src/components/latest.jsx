@@ -3,69 +3,50 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import { AiOutlinePlayCircle } from 'react-icons/ai'
+import { AiFillPlayCircle } from 'react-icons/ai'
 
 const StyledSection = styled.section`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 100%;
   > h1 {
-    display: block;
-    margin: 0 auto 2rem;
+    margin: 2rem auto 3rem;
     max-width: 100%;
     text-align: center;
     position: relative;
-    width: 800px;
-    &:before {
-      background: var(--color-highlight);
-      content: '';
-      height:1rem;
-      position:absolute;
-      right:0;
-      bottom:0;
-      width: 100%;
-      z-index:-1;
-    }
   }
 
   article {
     align-items: center;
-    border-radius: 1.5rem;
     background: var(--color-primary-lighter);
     box-shadow:  -20px 20px 60px #c9ccc6, 
                 20px -20px 60px #ffffff;
     display: grid;
     gap:2rem;
     grid-template-columns: 440px 1fr;
-    padding: 1.5rem;
+    padding: 0 1.5rem 0 0;
 
     .cover {
+      align-self: start;
       transition: all 0.25s ease-in-out;
       &:hover {
-        transform: translateY(-0.25rem);
+        transform: scale(1.025);
       }
     }
 
     figure {
-      border-radius:1rem;
       margin:0;
       overflow: hidden;
     }
 
     > div {
-      padding:1rem 0;
+      padding:1.5rem 0;
       > a {
         text-decoration: none;
       }
       > a > h2 {
         color: var(--color-default);
-      }
-      > h2 {
+        font-family: 'silkablack';
         margin-bottom:0.5rem;
-      }
-      > small {
-        color: var(--color-secondary);
-        display: block;
-        margin-bottom: 1rem;
       }
     }
   }
@@ -85,7 +66,7 @@ const StyledSection = styled.section`
 const Latest = ({ LatestPost }) => {
   return (
     <StyledSection>
-      <h1>Escucha el último episodio de NRDWARE</h1>
+      <h1>Escucha el último episodio</h1>
       {LatestPost.nodes.map(node => (
         <article key={node.uid}>
           <Link to={`/${node.uid}`} className='cover'>
@@ -97,10 +78,10 @@ const Latest = ({ LatestPost }) => {
             <Link to={`/${node.uid}`}>
               <h2>{node.data.title.text}</h2>
             </Link>
-            <small>{node.tags}: Episodio {node.data.episode_number.text}</small>
+            <small>#Episodio{node.data.episode_number.text}</small>
             <div dangerouslySetInnerHTML={{ __html: node.data.show_description.html }} />
             <Link to={`/${node.uid}`} className='btn'>
-              <span>Escúchalo ahora</span> <AiOutlinePlayCircle />
+              <span>Escúchalo ahora</span> <AiFillPlayCircle />
             </Link>
           </div>
         </article>

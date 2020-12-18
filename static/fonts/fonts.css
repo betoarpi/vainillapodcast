@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'silkablack';
+    src: url('silka-black-webfont.woff2') format('woff2'),
+         url('silka-black-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'silkamono';
+    src: url('silkamono-medium-webfont.woff2') format('woff2');
+}

@@ -1,19 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-
   html {
-    font-size: 18px;
     --color-primary: #edf0e9;
     --color-primary-lighter: #f5f8f1;
     --color-primary_shade: #BFC9B1;
-    --color-secondary: #691936;
-    --color-highlight: #f7ca2a;
-    --color-default: #303030;
+    --color-secondary: #06BCC1;
+    --color-highlight: #fcdc48;
+    --color-default: #35322F;
   }
   body {
     background: var(--color-primary);
     color: var(--color-default);
+    font-family: 'silkamono';
     min-height: 100vh;
     margin:0;
     padding:0 2rem;
@@ -25,9 +24,17 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   h1 {
-    color: var(--color-secondary);
+    color: var(--color-default);
   }
-  padding, ul, li, span {
+  h2 {
+    font-size: 2.2rem;
+  }
+  small {
+    background: var(--color-secondary);
+    color: var(--color-primary-lighter);
+    display: inline-block;
+  }
+  ul, li, span {
     a {
       color: var(--color-secondary);
 
@@ -38,12 +45,13 @@ const GlobalStyles = createGlobalStyle`
   }
   .header {
     display: flex;
-    padding:1rem 0;
+    padding:2rem 0 1rem 0;
     margin-bottom: 2rem;
     width: 100%;
     nav {
+      align-items: center;
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 200px 1fr;
       margin:0 auto;
       max-width:1024px;
       width:100%;
@@ -63,7 +71,7 @@ const GlobalStyles = createGlobalStyle`
           display: inline-flex;
           font-size:0.85rem;
           list-style: none;
-          margin:0 0.5rem;
+          margin:0 1rem;
           a {
             color: var(--color-default);
             font-weight: 300;
@@ -71,9 +79,9 @@ const GlobalStyles = createGlobalStyle`
             text-decoration: none;
             text-transform: uppercase;
             &:hover, &[aria-current='page'] {
-              color: var(--color-secondary);
+              color: var(---color-primary);
               &:before {
-                background: var(--color-highlight);
+                background: var(--color-secondary);
                 content: '';
                 height:1rem;
                 position:absolute;
@@ -156,13 +164,12 @@ const GlobalStyles = createGlobalStyle`
   main {
     margin: 0 auto;
     min-height: calc(100vh - 224px);
-    max-width: 960px;
+    max-width: 1024px;
   }
   .btn {
     align-items: center;
-    background: var(--color-secondary);
-    border-radius:2rem;
-    color: white;
+    background: var(--color-default);
+    color: var(--color-highlight);
     display: grid;
     font-weight: 700;
     grid-template-columns: 1fr max-content;
@@ -173,7 +180,7 @@ const GlobalStyles = createGlobalStyle`
     width:100%;
     &:hover {
       background: var(--color-highlight);
-      color: var(--color-secondary);
+      color: var(--color-default);
     }
     svg {
       height: 1.5rem;
@@ -187,11 +194,6 @@ const GlobalStyles = createGlobalStyle`
       svg {
         display: none;
       }
-    }
-  }
-  figure {
-    img {
-      border-radius:1rem;
     }
   }
 

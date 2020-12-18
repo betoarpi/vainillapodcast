@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="299.992" height="92.669" viewBox="0 0 2538 784">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 327.169px;
+        font-family: Silka;
+        font-weight: 800;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        fill: #35322f;
+      }
+
+      .cls-1, .cls-4, .cls-5 {
+        text-anchor: middle;
+        text-transform: uppercase;
+      }
+
+      .cls-2 {
+        mix-blend-mode: overlay;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        font-size: 120.741px;
+        font-family: "Font Awesome 5 Pro";
+      }
+
+      .cls-5 {
+        font-size: 140.215px;
+        font-family: "Silka Mono";
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <text id="_vainilla_" data-name="{ vainilla }" class="cls-1" transform="translate(1269.061 350.897) scale(1.284)"><tspan x="0">{ vainilla }</tspan></text>
+  <g id="Grupo_1" data-name="Grupo 1" class="cls-2">
+    <path id="Rectángulo_1" data-name="Rectángulo 1" class="cls-3" d="M234.987,477.9h2064l2.01,19.106H237Z"/>
+    <text id="_" data-name="" class="cls-4" transform="translate(1234.684 531.86) scale(2.41 1.068)"><tspan x="0"></tspan></text>
+  </g>
+  <text id="Podcast.fm" class="cls-5" transform="translate(1269.043 752.432) scale(1.284)"><tspan x="0">Podcast.fm</tspan></text>
+</svg>

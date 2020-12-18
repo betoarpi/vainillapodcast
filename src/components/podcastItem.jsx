@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import { AiFillPlayCircle } from 'react-icons/ai'
 
 const StyledArticle = styled.article`
-  border-radius: 1.5rem;
   background: var(--color-primary-lighter);
   box-shadow:  -20px 20px 60px #c9ccc6, 
                20px -20px 60px #ffffff;
@@ -33,7 +32,7 @@ const StyledArticle = styled.article`
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 100px 1fr 40px;
-    padding: 1rem 2rem 1rem 1rem;
+    padding: 0 2rem 0 0;
     text-decoration: none;
     &:hover {
       .icon {
@@ -48,7 +47,6 @@ const StyledArticle = styled.article`
   }
 
   figure {
-    border-radius:1rem;
     margin:0;
     overflow: hidden;
     max-width: 100%;
@@ -63,8 +61,9 @@ const StyledArticle = styled.article`
       margin-bottom:0.5rem;
     }
     > small {
-      color: var(--color-secondary);
-      display: block;
+      background: var(--color-secondary);
+      color: var(--color-primary-lighter);
+      display: inline-block;
     }
   }
   .icon {
@@ -85,7 +84,7 @@ const StyledArticle = styled.article`
   }
 `
 
-const PodcastItem = ({ data, tags, uid }) => {
+const PodcastItem = ({ data, uid }) => {
   return (
     <StyledArticle>
       <Link to={`/${uid}`}>
@@ -94,7 +93,7 @@ const PodcastItem = ({ data, tags, uid }) => {
         </figure>
         <div>
           <h4>{data.title.text}</h4>
-          <small>{tags}: Episodio {data.episode_number.text}</small>
+          <small>#Episodio {data.episode_number.text}</small>
         </div>
         <AiFillPlayCircle className='icon' />
       </Link>

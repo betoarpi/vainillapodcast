@@ -3,9 +3,9 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `El Podcast para el nerdo que todos llevamos dentro`,
-    description: `En esta producción original de Spotify comentamos los eventos y lanzamientos más sobresalientes de la cultura geek en compañía de Mariano Latapí, Claudio Quiroz, Miguel Asher Sandoval y Lorenzo Grajales, cuatro de los nerdos mejor conocidos en la República Mexicana. Videojuegos, películas, series, cómics, juguetes y música friki, todo ello y más tiene su lugar en NRDWARE, el podcast para el nerdo que llevamos dentro.`,
-    author: `Diseño por @violetstarfish y desarrollo por @betoarpi`,
+    title: `Un Podcast de Front-end en Español`,
+    description: `En este podcast Rob Arroyo te comparte información, noticias y recursos acerca del mundo del desarrollo Front-end.`,
+    author: `Diseño y desarrollo por @betoarpi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -55,6 +55,15 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["silkablack, silkamono"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
   ],
 }

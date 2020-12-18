@@ -7,7 +7,7 @@ import { PodcastSection, PodcastHeader, ShowNotes } from './styles'
 import { TiPlus } from 'react-icons/ti'
 
 const Podcast = ({ data: { prismicPodcast } }) => {
-  const { data, tags } = prismicPodcast
+  const { data } = prismicPodcast
   function handleClick(e) {
     const target = e.target.parentNode;
     const targetParent = target.parentNode;
@@ -36,8 +36,8 @@ const Podcast = ({ data: { prismicPodcast } }) => {
             </figure>
             <div>
               <h1>{data.title.text}</h1>
-              <small>{tags}: Episodio {data.episode_number.text}</small>
-              <p><span dangerouslySetInnerHTML={{ __html: data.publication_date }} /></p>
+              <small>Episodio {data.episode_number.text}</small>
+              <p><span className='date' dangerouslySetInnerHTML={{ __html: data.publication_date }} /></p>
               <p><span dangerouslySetInnerHTML={{ __html: data.show_description.text }} /></p>
             </div>
           </PodcastHeader>
@@ -114,7 +114,6 @@ export const podcastQuery = graphql`
           text
         }
       }
-      tags
     }
   }
 `

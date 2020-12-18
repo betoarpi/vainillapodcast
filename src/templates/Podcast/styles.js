@@ -7,38 +7,43 @@ export const PodcastSection = styled.section`
 
 export const PodcastHeader = styled.header`
   align-items: center;
-  border-radius: 1.5rem;
   background: var(--color-primary-lighter);
   box-shadow:  -20px 20px 60px #c9ccc6, 
               20px -20px 60px #ffffff;
   display: grid;
   gap:2rem;
   grid-template-columns: 440px 1fr;
-  margin-bottom:2rem;
-  padding: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem 0 0;
 
   .cover {
+    align-self: start;
     transition: all 0.25s ease-in-out;
     &:hover {
-      transform: translateY(-0.25rem);
+      transform: scale(1.025);
     }
   }
 
   figure {
-    border-radius:1rem;
     margin:0;
     overflow: hidden;
   }
 
   > div {
-    padding:1rem 0;
-    > h2 {
+    padding:1.5rem 0;
+    > a {
+      text-decoration: none;
+    }
+    > h1 {
+      color: var(--color-default);
+      font-family: 'silkablack';
       margin-bottom:0.5rem;
     }
     > small {
-      color: var(--color-secondary);
-      display: block;
       margin-bottom: 1rem;
+    }
+    .date {
+      font-family: 'silkablack';
     }
   }
 
@@ -63,15 +68,8 @@ export const ShowNotes = styled.ul`
     box-shadow:  -0.05rem 0.05rem 0.35rem #BFC9B1;
     margin-bottom: 0.5rem;
     padding: 1rem 0.5rem;
-    &:first-child {
-      border-radius: 1rem 1rem 0 0;
-    }
-    &:last-child {
-      border-radius: 0 0 1rem 1rem;
-    }
     &__title {
       display: grid;
-      font-weight:400;
       gap:1rem;
       grid-template-columns: 65px auto 1fr 30px;
       margin-bottom: 0;
@@ -124,6 +122,9 @@ export const ShowNotes = styled.ul`
       transition: all 0.25s ease-in-out;
       > * {
         direction: ltr;
+      }
+      > h3 {
+        font-family: 'silkablack';
       }
       ul + p {
         margin-bottom: 0.5rem;
