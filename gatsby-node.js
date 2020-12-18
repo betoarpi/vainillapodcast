@@ -49,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-  const teamTemplate = path.resolve("src/templates/Team/index.jsx")
+  /* const teamTemplate = path.resolve("src/templates/Team/index.jsx")
   pages.data.allPrismicTeam.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.uid}`,
@@ -58,5 +58,5 @@ exports.createPages = async ({ graphql, actions }) => {
         uid: edge.node.uid,
       },
     })
-  })
+  }) */
 }
