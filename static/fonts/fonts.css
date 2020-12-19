@@ -8,3 +8,8 @@
     font-family: 'silkamono';
     src: url('silkamono-medium-webfont.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'silkamonobold';
+    src: url('silkamono-bold-webfont.woff2') format('woff2');
+}

@@ -41,6 +41,7 @@ export const PodcastHeader = styled.header`
       color: var(--color-default);
       font-family: 'silkablack';
       margin-bottom:0.5rem;
+      text-transform: uppercase;
     }
     .date {
       font-family: 'silkablack';
@@ -156,6 +157,7 @@ export const ShowNotes = styled.ul`
       text-align: right;
     }
     &__topic {
+      font-family: 'silkablack';
       grid-column: 2 / 3;
       grid-row: 1 / 2;
     }

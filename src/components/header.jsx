@@ -80,12 +80,13 @@ if (typeof window !== 'undefined') {
   window.onscroll = () => { handleScroll() }
 }
 
-const Header = ({ pageDescription, pageTitle, title }) => {
+const Header = ({ pageDescription, pageTitle, title, image }) => {
   return (
     <>
       <SEO
         title={title || pageTitle}
         description={pageDescription}
+        image={image}
       />
       <header className='header' id='header'>
         <Navigation>

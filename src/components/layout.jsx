@@ -5,7 +5,7 @@ import GlobalStyles from '../styles/GlobalStyles'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({ children, pageTitle, pageDescription }) => {
+const Layout = ({ children, pageTitle, pageDescription, image }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -24,6 +24,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
         siteTitle={data.site.siteMetadata.title}
         pageTitle={pageTitle}
         pageDescription={pageDescription}
+        image={image}
       />
       <main>
         {children}

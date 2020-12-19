@@ -11,6 +11,7 @@ const Page = ({ data: { prismicPages } }) => {
     <Layout
       pageDescription={data.content.text}
       pageTitle={data.page_name.text}
+      image={data.page_cover.localFile.childImageSharp.fluid.src}
     >
       <PageSection>
         <h1>{data.page_name.text}</h1>
@@ -55,10 +56,12 @@ export const pageQuery = graphql`
           text
         }
         page_cover {
+          alt
           localFile {
             childImageSharp {
               fluid(maxWidth: 960) {
                 ...GatsbyImageSharpFluid_tracedSVG,
+                src
               }
             }
           }

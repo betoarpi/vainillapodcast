@@ -69,10 +69,13 @@ const StyledSection = styled.section`
   }
 `
 
-const Latest = () => {
-    console.log(Error404Img);
+const Latest = ({ data: { prismicPages } }) => {
+    const { data } = prismicPages
   return (
-    <Layout>
+    <Layout
+        pageDescription={data.content.text}
+        pageTitle={data.page_name.text}
+    >
         <StyledSection>
             <article key='error-404'>
                 <figure>

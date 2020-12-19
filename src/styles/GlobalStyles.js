@@ -29,6 +29,9 @@ const GlobalStyles = createGlobalStyle`
   h2 {
     font-size: 2.2rem;
   }
+  b, strong {
+    font-family: 'silkamonobold'
+  }
   small {
     background: var(--color-secondary);
     color: var(--color-primary-lighter);

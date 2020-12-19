@@ -38,7 +38,10 @@ const PodcastGrid = styled.div`
 const Homepage = ({ data }) => {
   const { AllPosts } = data
   return (
-    <Layout>
+    <Layout
+      pageDescription="Vainilla es un Podcast de Front-end en Español. Acompaña a Rob Arroyo en estas cápsulas con tips sobre tecnologías web, carrera profesional y noticias de la industria."
+      pageTitle="Un Podcast de Front-end en Español"
+    >
       <Latest {...data} />
       <PodcastSection>
         {AllPosts.nodes.length > 0 && <h2>Todos los episodios</h2>}

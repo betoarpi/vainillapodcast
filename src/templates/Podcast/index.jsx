@@ -22,6 +22,7 @@ const Podcast = ({ data: { prismicPodcast } }) => {
     <Layout
       pageDescription={data.show_description.text}
       pageTitle={data.title.text}
+      image={data.cover.localFile.childImageSharp.fluid.src}
     >
       <PodcastSection>
         <article>
@@ -87,6 +88,7 @@ export const podcastQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid_tracedSVG,
+                src
               }
             }
           }
