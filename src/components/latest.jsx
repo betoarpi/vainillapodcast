@@ -52,8 +52,13 @@ const StyledSection = styled.section`
   }
 
   @media screen and (max-width: 1023px) {
+    max-width: 480px;
     article {
       grid-template-columns: 300px 1fr;
+      padding:0;
+      > div {
+        padding: 1.5rem;
+      }
     }
   }
   @media screen and (max-width: 767px) {

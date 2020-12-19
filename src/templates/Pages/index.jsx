@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
 import Layout from '../../components/layout'
 
 const Page = ({ data: { prismicPages } }) => {
@@ -11,7 +12,7 @@ const Page = ({ data: { prismicPages } }) => {
       pageDescription={data.content.text}
       pageTitle={data.page_name.text}
     >
-      <section>
+      <PageSection>
         <h1>{data.page_name.text}</h1>
         {data.page_cover.localFile &&
           <figure>
@@ -19,10 +20,24 @@ const Page = ({ data: { prismicPages } }) => {
           </figure>
         }
         <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
-      </section>
+      </PageSection>
     </Layout>
   )
 }
+
+export const PageSection = styled.section`
+  margin: 0 auto;
+  max-width: 1024px;
+  a {
+    color: var(--color-secondary);
+    &:hover {
+      background: var(--color-highlight);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
+`
 
 Page.propTypes = {
   pageDescription: PropTypes.string,

@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     background: var(--color-secondary);
     color: var(--color-primary-lighter);
     display: inline-block;
+    margin-bottom: 1rem;
   }
   ul, li, span {
     a {
@@ -91,6 +92,9 @@ const GlobalStyles = createGlobalStyle`
                 z-index:-1;
               }
             }
+            &[aria-current='page'] {
+              color: white;
+            }
           }
         }
         &.active {
@@ -119,7 +123,7 @@ const GlobalStyles = createGlobalStyle`
         a {
           display: block;
           float: left;
-          width:100px;
+          width:180px;
         }
         ul {
           background: var(--color-secondary);

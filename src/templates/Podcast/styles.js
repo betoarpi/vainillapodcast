@@ -2,7 +2,10 @@ import styled from 'styled-components'
 
 export const PodcastSection = styled.section`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1024px;
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
 `
 
 export const PodcastHeader = styled.header`
@@ -39,9 +42,6 @@ export const PodcastHeader = styled.header`
       font-family: 'silkablack';
       margin-bottom:0.5rem;
     }
-    > small {
-      margin-bottom: 1rem;
-    }
     .date {
       font-family: 'silkablack';
     }
@@ -52,6 +52,12 @@ export const PodcastHeader = styled.header`
   }
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    padding:0;
+    > div {
+      padding: 1.5rem;
+    }
   }
 `
 
@@ -166,6 +172,12 @@ export const ShowNotes = styled.ul`
         margin: 0.5rem 0 0;
         opacity:1;
         padding: 1.5rem 2rem 0;
+        .block-img {
+          img {
+            display: block;
+            margin: 0 auto;
+          }
+        }
       }
     }
   }
