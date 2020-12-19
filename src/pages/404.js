@@ -69,12 +69,11 @@ const StyledSection = styled.section`
   }
 `
 
-const Latest = ({ data: { prismicPages } }) => {
-    const { data } = prismicPages
+const Latest = () => {
   return (
     <Layout
-        pageDescription={data.content.text}
-        pageTitle={data.page_name.text}
+        pageDescription='!Lo sentimos! El podcast que buscas no existe, pero quizá esté en planes de grabarlo. Mientras tanto, te invitamos a escuchar alguno de nuestros episodios.'
+        pageTitle='Página 404'
     >
         <StyledSection>
             <article key='error-404'>
