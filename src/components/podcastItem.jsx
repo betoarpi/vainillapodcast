@@ -77,6 +77,7 @@ const StyledArticle = styled.article`
     margin-left: 3rem;
     > a {
       grid-template-columns: 1fr 40px;
+      padding-left: 30px;
       .cover {
         display: none;
       }

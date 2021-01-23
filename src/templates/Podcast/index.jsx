@@ -18,6 +18,9 @@ const Podcast = ({ data: { prismicPodcast } }) => {
       targetParent.classList.remove('active')
     }
   }
+
+  console.log(data.show_notes.length);
+
   return (
     <Layout
       pageDescription={data.show_description.text}
@@ -44,7 +47,7 @@ const Podcast = ({ data: { prismicPodcast } }) => {
           </PodcastHeader>
           <div>
             <div dangerouslySetInnerHTML={{ __html: data.podcast_embed.text }} />
-            <h2>Las notas del show</h2>
+            {data.show_notes.length > 0 && <h2>Las notas del show</h2>}
             <ShowNotes>
               {data.show_notes.map((note) => (
                 <li key={note.note_title.text} className='show-note'>
